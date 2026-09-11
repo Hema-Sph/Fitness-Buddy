@@ -1,76 +1,116 @@
-# 💪 Fitness Buddy — AI Health & Fitness Coach
+﻿# 💪 Fitness Buddy — AI Health & Fitness Coach
 
-An intelligent, full-stack virtual fitness assistant powered by **IBM Granite** AI.
+An intelligent, full-stack virtual fitness assistant powered by **IBM Granite** AI. Chat with your personal AI coach for workout plans, nutrition tips, motivation, and recovery advice.
 
 ---
 
-## Features
-- 🏋️ **Personalized workouts** – home & gym routines for all fitness levels
-- 🥗 **Nutrition guidance** – simple, balanced meal ideas
-- ⚡ **Motivation & habit building** – daily tips & encouragement
-- 🧘 **Recovery advice** – stretching, sleep, and wellness
-- 💬 **Real-time AI chat** – conversational, context-aware responses
+## ✨ Features
 
-## Tech Stack
-| Layer | Tech |
-|-------|------|
-| Frontend | HTML5, CSS3, Vanilla JavaScript |
-| Backend | Node.js, Express.js |
-| AI Model | IBM Granite 4 (`ibm/granite-4-h-small`) |
-| Auth | IBM IAM OAuth2 (API Key → Bearer Token) |
+- 🏋️ **Personalized workouts** – Home & gym routines for all fitness levels and goals
+- 🥗 **Nutrition guidance** – Simple, balanced meal ideas and hydration tips
+- ⚡ **Motivation & habit building** – Daily tips, encouragement, and progress support
+- 🧘 **Recovery advice** – Stretching, sleep, and wellness guidance
+- 💬 **Real-time AI chat** – Conversational, context-aware responses via IBM Granite
 
-## Setup
+---
 
-### 1. Clone & Install
-```bash
-npm install
-```
+## 🛠 Tech Stack
 
-### 2. Configure Environment
-Copy `.env.example` to `.env` and fill in your credentials:
-```bash
+| Layer     | Technology                                      |
+|-----------|-------------------------------------------------|
+| Frontend  | HTML5, CSS3, Vanilla JavaScript                 |
+| Backend   | Python 3, Flask                                 |
+| AI Model  | IBM Granite 4 (ibm/granite-4-h-small)         |
+| Auth      | IBM IAM OAuth2 (API Key → Bearer Token)         |
+
+---
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- An [IBM Cloud](https://cloud.ibm.com) account with a WatsonX project and API key
+
+### 1. Clone the repository
+\\\ash
+git clone https://github.com/Hema-Sph/Fitness-Buddy.git
+cd Fitness-Buddy
+\\\
+
+### 2. Install dependencies
+\\\ash
+pip install -r requirements.txt
+\\\
+
+### 3. Configure environment variables
+Copy the example file and fill in your credentials:
+\\\ash
 cp .env.example .env
-```
+\\\
 
-Edit `.env`:
-```
+Edit \.env\:
+\\\env
 IBM_API_KEY=your_ibm_api_key_here
-IBM_PROJECT_ID=942ca098-2478-4985-a928-02368453f9a4
+IBM_PROJECT_ID=your_ibm_project_id_here
 IBM_MODEL_ID=ibm/granite-4-h-small
 IBM_API_URL=https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29
 IBM_IAM_URL=https://iam.cloud.ibm.com/identity/token
 PORT=3000
-```
+\\\
 
-### 3. Run
-```bash
-npm start
-```
+### 4. Run the app
+\\\ash
+python app.py
+\\\
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Development (auto-reload)
-```bash
-npm run dev
-```
+> **Windows users:** You can also double-click Open Fitness Buddy.bat to launch the app automatically.
 
-## Project Structure
-```
-fitness-buddy/
-├── server.js          # Express backend + IBM Granite integration
-├── package.json
-├── .env.example       # Environment variable template
+---
+
+## 📁 Project Structure
+
+\\\
+Fitness-Buddy/
+├── app.py                 # Flask backend + IBM Granite integration
+├── launcher.py            # Optional launcher script
+├── Open Fitness Buddy.bat # Windows quick-launch script
+├── requirements.txt       # Python dependencies
+├── .env.example           # Environment variable template
 └── public/
-    ├── index.html     # Main chat UI
-    ├── style.css      # Styles (dark theme, responsive)
-    └── app.js         # Frontend logic & API calls
-```
+    ├── index.html         # Main chat UI
+    ├── style.css          # Styles (dark theme, responsive)
+    └── app.js             # Frontend logic & API calls
+\\\
 
-## API Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/chat` | Send a message and get an AI reply |
-| GET | `/api/health` | Health check |
+---
 
-## Safety Note
-Fitness Buddy provides **general wellness guidance only**. Always consult a qualified healthcare or fitness professional for medical advice.
+## 🔌 API Endpoints
+
+| Method | Endpoint     | Description                          |
+|--------|--------------|--------------------------------------|
+| GET    | /          | Serves the chat UI                   |
+| POST   | /api/chat  | Send a message, receive an AI reply  |
+| GET    | /api/health| Health check                         |
+
+### /api/chat — Request body
+\\\json
+{
+  "messages": [
+    { "role": "user", "content": "Give me a 20-minute home workout" }
+  ]
+}
+\\\
+
+---
+
+## ⚠️ Safety Note
+
+Fitness Buddy provides **general wellness guidance only**. Always consult a qualified healthcare or fitness professional before starting a new exercise program, especially if you have existing injuries or medical conditions.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
