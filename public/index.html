@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Buddy — Your AI Health Coach</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ── Sidebar ────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon">💪</div>
+        <div>
+          <h1>Fitness Buddy</h1>
+          <p>AI Health Coach</p>
+        </div>
+      </div>
+      <button class="close-sidebar" id="closeSidebar" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="quick-actions">
+      <p class="section-label">Quick Start</p>
+      <button class="quick-btn" data-prompt="Create a 20-minute full-body home workout for a beginner with no equipment.">
+        🏠 Home Workout
+      </button>
+      <button class="quick-btn" data-prompt="Give me a simple, nutritious meal plan for today including breakfast, lunch, dinner and a snack.">
+        🥗 Meal Plan
+      </button>
+      <button class="quick-btn" data-prompt="Share a motivational fitness quote and a tip to build a consistent workout habit.">
+        ⚡ Motivate Me
+      </button>
+      <button class="quick-btn" data-prompt="Explain the best post-workout recovery routine including stretching, nutrition and rest.">
+        🧘 Recovery Tips
+      </button>
+      <button class="quick-btn" data-prompt="What are the best exercises to lose belly fat at home in 30 days?">
+        🔥 Fat Burning
+      </button>
+      <button class="quick-btn" data-prompt="Suggest a healthy hydration plan and explain how much water I should drink daily.">
+        💧 Hydration Guide
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="new-chat-btn" id="newChatBtn">+ New Conversation</button>
+      <p class="disclaimer">⚠️ Fitness Buddy provides general wellness guidance. Always consult a healthcare professional for medical advice.</p>
+    </div>
+  </aside>
+
+  <!-- ── Main Chat Area ─────────────────────────────────────── -->
+  <main class="chat-container">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="topbar-info">
+        <span class="status-dot"></span>
+        <span>Fitness Buddy</span>
+        <span class="model-badge">IBM Granite</span>
+      </div>
+      <button class="clear-btn" id="clearBtn" title="Clear chat">🗑️</button>
+    </header>
+
+    <!-- Messages -->
+    <section class="messages" id="messages" role="log" aria-live="polite" aria-label="Chat messages">
+      <!-- Welcome card injected by JS -->
+    </section>
+
+    <!-- Typing indicator -->
+    <div class="typing-indicator" id="typingIndicator" aria-hidden="true">
+      <div class="typing-bubble">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="typing-text">Fitness Buddy is thinking…</span>
+    </div>
+
+    <!-- Input Area -->
+    <footer class="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="userInput"
+          placeholder="Ask me about workouts, nutrition, motivation…"
+          rows="1"
+          aria-label="Type your message"
+          autocomplete="off"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Send message" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</p>
+    </footer>
+  </main>
+
+  <!-- ── Overlay ────────────────────────────────────────────── -->
+  <div class="overlay" id="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
