@@ -6,9 +6,9 @@ services:
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: IBM_API_KEY
-        value: 4ItIatS7TkhaExLAzYfCcyxu_fQmk8H83cynzwuIdOGs
+        sync: false
       - key: IBM_PROJECT_ID
-        value: 942ca098-2478-4985-a928-02368453f9a4
+        sync: false
       - key: IBM_MODEL_ID
         value: ibm/granite-4-h-small
       - key: IBM_API_URL
