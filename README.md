@@ -1,6 +1,12 @@
-﻿# 💪 Fitness Buddy — AI Health & Fitness Coach
+# 💪 Fitness Buddy — AI Health & Fitness Coach
 
 An intelligent, full-stack virtual fitness assistant powered by **IBM Granite** AI. Chat with your personal AI coach for workout plans, nutrition tips, motivation, and recovery advice.
+
+---
+
+## 🌐 Live Demo
+
+👉 **[https://fitness-buddy-zpcq.onrender.com](https://fitness-buddy-zpcq.onrender.com)**
 
 ---
 
